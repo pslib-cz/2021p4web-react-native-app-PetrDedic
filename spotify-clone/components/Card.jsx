@@ -70,11 +70,17 @@ const Card = (props) => {
   const image = props.artwork;
   let navigate = useNavigate();
 
+  const pressFunction = () => {
+    console.log("clicked");
+    props.onPress();
+    //navigate("/track/" + props.id, { replace: true });
+  };
+
   return (
     <TouchableHighlight
       activeOpacity={0.3}
       underlayColor="#dddddd0"
-      onPress={() => navigate("/track/" + props.id, { replace: true })}
+      onPress={() => pressFunction()}
       style={{
         borderRadius: 16,
       }}
